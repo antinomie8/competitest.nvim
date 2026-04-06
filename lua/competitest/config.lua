@@ -64,6 +64,7 @@
 ---@field split_ui competitest.Config.split_ui
 ---@field save_current_file boolean save current file before running testcases
 ---@field save_all_files boolean save all the opened files before running testcases
+---@field run_empty_testcase boolean if no testcases are provided, run an empty one
 ---@field compile_directory string working directory of compiler, relative to current file path
 ---@field compile_command { [string]: competitest.SystemCommand } command used to compile code, for each file type
 ---@field running_directory string working directory of your solutions, relative to current file path
@@ -200,6 +201,7 @@ local default_config = {
 
 	save_current_file = true,
 	save_all_files = false,
+	run_empty_testcase = false,
 	compile_directory = ".",
 	compile_command = {
 		c = { exec = "gcc", args = { "-Wall", "$(FNAME)", "-o", "$(FNOEXT)" } },

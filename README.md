@@ -287,6 +287,7 @@ require('competitest').setup {
 
 	save_current_file = true,
 	save_all_files = false,
+	run_empty_testcase = false,
 	compile_directory = ".",
 	compile_command = {
 		c = { exec = "gcc", args = { "-Wall", "$(FNAME)", "-o", "$(FNOEXT)" } },
@@ -385,6 +386,7 @@ require('competitest').setup {
 	- `horizontal_layout`: a table describing horizontal split UI layout. For further details see [here](#customize-ui-layout)
 - `save_current_file`: if true save current file before running testcases
 - `save_all_files`: if true save all the opened files before running testcases
+- `run_empty_testcase`  if true and no testcases are provided, run an empty one
 - `compile_directory`: execution directory of compiler, relatively to current file's path
 - `compile_command`: configure the command used to compile code for every different language, see [here](#customize-compile-and-run-commands)
 - `running_directory`: execution directory of your solutions, relatively to current file's path
