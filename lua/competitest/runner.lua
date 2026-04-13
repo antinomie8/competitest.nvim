@@ -156,7 +156,7 @@ function TCRunner:run_testcases(tctbl, compile)
 		if self.compile then -- if compilation is needed we add it as a testcase
 			table.insert(self.tcdata, { stdin = {}, expout = nil, tcnum = "Compile" })
 		end
-		if self.config.run_empty_testcase and #tctbl == 0 then
+		if self.config.run_empty_testcase and tctbl[0] == nil then
 			tctbl[0] = { input = "" }
 		end
 		for tcnum, tc in pairs(tctbl) do
